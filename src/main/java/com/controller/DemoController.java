@@ -25,7 +25,6 @@ public class DemoController {
 		ServletContext application = req.getServletContext();
 		application.setAttribute("application", "application的值");
 		return "/show.jsp";
-
 	}
 
 	@RequestMapping("demo2")
@@ -49,6 +48,12 @@ public class DemoController {
 	public String demo3(Map<String, Object> map) {
 		System.out.println(map.getClass());
 		map.put("mapkey", "map的值");
+		return "/show.jsp";
+	}
+	@RequestMapping("demo7")
+	public String demo7(Map<String, Object> map) {
+		map.get("mapkey");
+		System.out.println(map.get("mapkey"));
 		return "/show.jsp";
 	}
 
